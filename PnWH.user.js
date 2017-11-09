@@ -3,7 +3,7 @@
 // @author					Ryahn aka Praximus Cladius
 // @description			Adds useful functions to the Game Politics and War
 // @include					https://politicsandwar.com/*
-// @version					0.7.6.10
+// @version					0.7.6.11
 // @updateURL				https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
 // @downloadURL			https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
 // @grant						GM_setValue
@@ -42,7 +42,7 @@ if(debug) { console.log("Script Version: " + pwhThisVersion + "\nUpdate: " + las
 //Save nation name to variable
 if(GM_getValue("nationName", 0) == 0){
 	getNationName();
-	if(debug) { console.log(getNationName()); }
+	debug("Naion Name Function",getNationName(),debug);
 }
 
 // ----------------------- FUNCTIONS -----------------------
@@ -60,6 +60,11 @@ function $_GET(param) {
 	}
 	return vars;
 }
+function debug(name,data,parm) {
+	if(parm) {
+		console.log("\""+name+": \"\n"+ data);
+	}
+}
 
 //Function to captitalize strings - http://stackoverflow.com/a/4878800
 function toTitleCase(str)
@@ -71,11 +76,13 @@ function toTitleCase(str)
 function getNationName(){
 	jQuery.get("https://politicsandwar.com/nation", function(response) {
 		var data = jQuery.parseHTML(response);
-		if(jQuery(response).find("li:contains('Login')").length){
+		if(jQuery(response).find("li:contains('Login')").length) {
 			GM_deleteValue("nationName");
-		}else{
-			var title = jQuery(response).find("th").eq(4).find("a").attr("href").split("=");
-			GM_setValue("nationName", title[1].trim().replace(/ /g, "%20"));
+		} else {
+			var nID = jQuery(response).find("td")[1];
+			var pwhNationName = jQuery(nID).text();
+			GM_setValue("nationName", pwhNationName);
+			debug("Nation Name",pwhNationName,debug);
 		}
 	});
 }
