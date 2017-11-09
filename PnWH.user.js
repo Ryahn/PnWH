@@ -1,17 +1,17 @@
 // ==UserScript==
-// @name           Politics and War Helper 2
-// @description    Adds useful functions to the Game Politics and War
-// @include        https://politicsandwar.com/*
-// @version        0.7.0
-// @require		     https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js
-// @require        https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css
-// @updateURL      https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
-// @downloadURL    https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
-// @grant		       GM_setValue
-// @grant		       GM_deleteValue
-// @grant		       GM_getValue
-// @grant          GM_xmlhttpRequest
-// @namespace      https://github.com/Ryahn/PnWH
+// @name						Politics and War Helper 2
+// @description			Adds useful functions to the Game Politics and War
+// @include					https://politicsandwar.com/*
+// @version					0.7.0
+// @require					https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js
+// @require					https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css
+// @updateURL				https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
+// @downloadURL			https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
+// @grant						GM_setValue
+// @grant						GM_deleteValue
+// @grant						GM_getValue
+// @grant						GM_xmlhttpRequest
+// @namespace				https://github.com/Ryahn/PnWH
 // ==/UserScript==
 
 //Get script versions
