@@ -47,10 +47,26 @@ jQuery.get("https://politicsandwar.com/nation", function(response) {
 			"User-Agent": "Mozilla/5.0",
 		},
 		onload: function(response2) {
-			console.log(response2);
+			console.log($_GET("test");
 		}
 	});
 });
 
 
 console.log("Script Version: " + pwhThisVersion + "\nUpdate: " + lastUpdate + "\nStamp: " + stamp + "\nCurrent: " + pwhCurrentVersion);
+
+
+function $_GET(param) {
+	var vars = {};
+	window.location.href.replace( location.hash, '' ).replace(
+		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+		function( m, key, value ) { // callback
+			vars[key] = value !== undefined ? value : '';
+		}
+	);
+
+	if ( param ) {
+		return vars[param] ? vars[param] : null;
+	}
+	return vars;
+}
