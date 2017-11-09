@@ -3,7 +3,7 @@
 // @author					Ryahn aka Praximus Cladius
 // @description			Adds useful functions to the Game Politics and War
 // @include					https://politicsandwar.com/*
-// @version					0.7.6.11
+// @version					0.7.6.12
 // @updateURL				https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
 // @downloadURL			https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
 // @grant						GM_setValue
@@ -13,13 +13,13 @@
 // @namespace				https://github.com/Ryahn/PnWH
 // ==/UserScript==
 
-var debug, d, stamp, lastUpdate, pwhThisVersion;
+var vdebug, d, stamp, lastUpdate, pwhThisVersion;
 
 d = new Date();
 stamp = d.getTime();
 lastUpdate = GM_getValue("lastUpdate", 0);
 pwhThisVersion = GM_info.script.version;
-debug = $_GET("debug");
+vdebug = $_GET("debug");
 
 //Checks for update once every 10 minutes
 if (stamp > (lastUpdate + 600000)) {
@@ -37,12 +37,12 @@ if (stamp > (lastUpdate + 600000)) {
 }
 var pwhCurrentVersion = GM_getValue("pwhCurrentVersion");
 
-if(debug) { console.log("Script Version: " + pwhThisVersion + "\nUpdate: " + lastUpdate + "\nStamp: " + stamp + "\nCurrent: " + pwhCurrentVersion); }
+debug("pwh Current",pwhCurrentVersion,vdebug);
 
 //Save nation name to variable
 if(GM_getValue("nationName", 0) == 0){
 	getNationName();
-	debug("Naion Name Function",getNationName(),debug);
+	debug("Naion Name Function",getNationName(),vdebug);
 }
 
 // ----------------------- FUNCTIONS -----------------------
@@ -82,7 +82,7 @@ function getNationName(){
 			var nID = jQuery(response).find("td")[1];
 			var pwhNationName = jQuery(nID).text();
 			GM_setValue("nationName", pwhNationName);
-			debug("Nation Name",pwhNationName,debug);
+			debug("Nation Name",pwhNationName,vdebug);
 		}
 	});
 }
