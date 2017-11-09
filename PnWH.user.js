@@ -3,7 +3,7 @@
 // @author					Ryahn aka Praximus Cladius
 // @description			Adds useful functions to the Game Politics and War
 // @include					https://politicsandwar.com/*
-// @version					0.7.6.05
+// @version					0.7.6.06
 // @updateURL				https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
 // @downloadURL			https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
 // @grant						GM_setValue
@@ -18,9 +18,23 @@ var d = new Date();
 var stamp = d.getTime();
 var lastUpdate = GM_getValue("lastUpdate", 0);
 var pwhThisVersion = GM_info.script.version;
-var debug = $_GET("debug");
+jQuery.get("https://politicsandwar.com/nation", function(response) {
+	var data = jQuery.parseHTML(response);
+	var nID = jQuery(response).find("td")[5];
+	var pwhNationID = jQuery(nID).text();
+	GM_xmlhttpRequest({
+		method: "GET",
+		url: "https://politicsandwar.com/nation/id="+ pwhNationID +"&debug=1",
+		headers: {
+			"User-Agent": "Mozilla/5.0",
+		},
+		onload: function(response2) {
+			var debug = $_GET("debug");
+		}
+	});
+});
 
-if (debug === 1) {
+if (debug) {
 	console.log("Debug On");
 } else {
 	console.log("Debug Off");
