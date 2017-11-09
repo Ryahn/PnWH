@@ -35,13 +35,14 @@ if (stamp > (lastUpdate + 600000)) {
 	});
 }
 var pwhCurrentVersion = GM_getValue("pwhCurrentVersion");
-jQuery.get("https://politicsandwar.com/nation", function(response) {
-	var data = jQuery.parseHTML(response);
-	var nID = jQuery(response).find("td")[5];
-	var pwhNationID = jQuery(nID).text();
-});
+
 
 GM_xmlhttpRequest({
+	jQuery.get("https://politicsandwar.com/nation", function(response) {
+		var data = jQuery.parseHTML(response);
+		var nID = jQuery(response).find("td")[5];
+		var pwhNationID = jQuery(nID).text();
+	});
 	method: "GET",
 	url: "https://politicsandwar.com/nation/id="+ pwhNationID +"&test=1",
 	headers: {
