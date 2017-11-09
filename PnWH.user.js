@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name           Politics and War Helper
+// @name           Politics and War Helper 2
 // @description    Adds useful functions to the Game Politics and War
 // @include        https://politicsandwar.com/*
 // @version        0.7.0
@@ -11,7 +11,7 @@
 // @grant		       GM_deleteValue
 // @grant		       GM_getValue
 // @grant          GM_xmlhttpRequest
-// @namespace      https://greasyfork.org/users/3941
+// @namespace      https://github.com/Ryahn/PnWH
 // ==/UserScript==
 
 //Get script versions
