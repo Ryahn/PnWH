@@ -29,7 +29,7 @@ jQuery.get("https://politicsandwar.com/nation", function(response) {
 			"User-Agent": "Mozilla/5.0",
 		},
 		onload: function(response2) {
-			var debug = $_GET("debug");
+			const debug = $_GET("debug");
 		}
 	});
 });
