@@ -3,7 +3,7 @@
 // @author					Ryahn aka Praximus Cladius
 // @description			Adds useful functions to the Game Politics and War
 // @include					https://politicsandwar.com/*
-// @version					0.7.0
+// @version					0.7.1
 // @require					https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js
 // @require					https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css
 // @updateURL				https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
