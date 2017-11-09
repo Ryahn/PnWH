@@ -4,7 +4,7 @@
 // @include        https://politicsandwar.com/*
 // @version        0.7.0
 // @require		     https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js
-// @require        https://politicsandwar.com/bootstrap/css/bootstrap.min.css
+// @require        https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css
 // @updateURL      https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
 // @downloadURL    https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
 // @grant		       GM_setValue
