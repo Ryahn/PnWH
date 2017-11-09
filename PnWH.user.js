@@ -4,7 +4,7 @@
 // @description			Adds useful functions to the Game Politics and War
 // @include					https://politicsandwar.com/*
 // @require					https://github.com/Ryahn/PnWH/raw/master/functions.js
-// @version					0.7.6.02
+// @version					0.7.6.04
 // @updateURL				https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
 // @downloadURL			https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
 // @grant						GM_setValue
