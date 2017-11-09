@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name						Politics and War Helper 2
+// @author					Ryahn aka Praximus Cladius
 // @description			Adds useful functions to the Game Politics and War
 // @include					https://politicsandwar.com/*
 // @version					0.7.0
