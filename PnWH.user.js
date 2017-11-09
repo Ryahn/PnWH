@@ -2,7 +2,7 @@
 // @name           Politics and War Helper
 // @description    Adds useful functions to the Game Politics and War
 // @include        https://politicsandwar.com/*
-// @version        0.6.9
+// @version        0.7.0
 // @require		     https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js
 // @require        https://politicsandwar.com/bootstrap/css/bootstrap.min.css
 // @grant		       GM_setValue
