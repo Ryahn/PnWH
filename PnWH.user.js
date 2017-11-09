@@ -3,7 +3,7 @@
 // @author					Ryahn aka Praximus Cladius
 // @description			Adds useful functions to the Game Politics and War
 // @include					https://politicsandwar.com/*
-// @version					0.7.6.06
+// @version					0.7.6.07
 // @updateURL				https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
 // @downloadURL			https://github.com/Ryahn/PnWH/raw/master/PnWH.user.js
 // @grant						GM_setValue
@@ -18,21 +18,7 @@ var d = new Date();
 var stamp = d.getTime();
 var lastUpdate = GM_getValue("lastUpdate", 0);
 var pwhThisVersion = GM_info.script.version;
-jQuery.get("https://politicsandwar.com/nation", function(response) {
-	var data = jQuery.parseHTML(response);
-	var nID = jQuery(response).find("td")[5];
-	var pwhNationID = jQuery(nID).text();
-	GM_xmlhttpRequest({
-		method: "GET",
-		url: "https://politicsandwar.com/nation/id="+ pwhNationID +"&debug=1",
-		headers: {
-			"User-Agent": "Mozilla/5.0",
-		},
-		onload: function(response2) {
-			const debug = $_GET("debug");
-		}
-	});
-});
+var debug = getDebug();
 
 if (debug) {
 	console.log("Debug On");
@@ -61,15 +47,33 @@ console.log("Script Version: " + pwhThisVersion + "\nUpdate: " + lastUpdate + "\
 // ----------------------- FUNCTIONS -----------------------
 function $_GET(param) {
 	var vars = {};
-	window.location.href.replace( location.hash, '' ).replace(
+	window.location.href.replace(location.hash, "").replace(
 		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
-		function( m, key, value ) { // callback
-			vars[key] = value !== undefined ? value : '';
+		function(m, key, value) { // callback
+			vars[key] = value !== undefined ? value : "";
 		}
 	);
 
-	if ( param ) {
+	if (param) {
 		return vars[param] ? vars[param] : null;
 	}
 	return vars;
+}
+
+function getDebug() {
+	jQuery.get("https://politicsandwar.com/nation", function(response) {
+		var data = jQuery.parseHTML(response);
+		var nID = jQuery(response).find("td")[5];
+		var pwhNationID = jQuery(nID).text();
+		GM_xmlhttpRequest({
+			method: "GET",
+			url: "https://politicsandwar.com/nation/id=91775&debug=1",
+			headers: {
+				"User-Agent": "Mozilla/5.0",
+			},
+			onload: function(response2) {
+				return $_GET("debug");
+			}
+		});
+	});
 }
